@@ -1,0 +1,53 @@
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\Bed Time Story.exe.config
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\Bed Time Story.exe
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\Bed Time Story.pdb
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\PdfiumViewer.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\PdfiumViewer.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\nl\PdfiumViewer.resources.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\obj\Debug\Bed Time Story.csproj.AssemblyReference.cache
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\obj\Debug\Bed_Time_Story.Form1.resources
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\obj\Debug\Bed_Time_Story.Properties.Resources.resources
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\obj\Debug\Bed Time Story.csproj.GenerateResource.cache
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\obj\Debug\Bed Time Story.csproj.CoreCompileInputs.cache
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\obj\Debug\Bed Time Story.csproj.CopyComplete
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\obj\Debug\Bed Time Story.exe
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\obj\Debug\Bed Time Story.pdb
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\x64\pdfium.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\Microsoft.Web.WebView2.Core.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\Microsoft.Web.WebView2.Core.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\System.Buffers.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\System.Memory.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\System.Numerics.Vectors.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Core.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.DocumentLayoutAnalysis.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Fonts.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Package.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Tokenization.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Tokens.dll
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\System.Buffers.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\System.Memory.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\System.Numerics.Vectors.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.pdb
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Core.pdb
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Core.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.DocumentLayoutAnalysis.pdb
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.DocumentLayoutAnalysis.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Fonts.pdb
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Fonts.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Package.pdb
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Package.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Tokenization.pdb
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Tokenization.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Tokens.pdb
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Tokens.xml
