@@ -51,6 +51,7 @@ namespace Bed_Time_Story
             this.talkSpeedSlider = new System.Windows.Forms.TrackBar();
             this.talkVolumeSlider = new System.Windows.Forms.TrackBar();
             this.customTextCheckBox = new System.Windows.Forms.CheckBox();
+            this.darkModeCheckbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pdfWebBrowser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.talkSpeedSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.talkVolumeSlider)).BeginInit();
@@ -258,11 +259,23 @@ namespace Bed_Time_Story
             this.customTextCheckBox.UseVisualStyleBackColor = true;
             this.customTextCheckBox.CheckedChanged += new System.EventHandler(this.customTextCheckBox_CheckedChanged);
             // 
+            // darkModeCheckbox
+            // 
+            this.darkModeCheckbox.AutoSize = true;
+            this.darkModeCheckbox.Location = new System.Drawing.Point(560, 12);
+            this.darkModeCheckbox.Name = "darkModeCheckbox";
+            this.darkModeCheckbox.Size = new System.Drawing.Size(79, 17);
+            this.darkModeCheckbox.TabIndex = 22;
+            this.darkModeCheckbox.Text = "Dark Mode";
+            this.darkModeCheckbox.UseVisualStyleBackColor = true;
+            this.darkModeCheckbox.CheckedChanged += new System.EventHandler(this.darkModeCheckbox_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 833);
+            this.Controls.Add(this.darkModeCheckbox);
             this.Controls.Add(this.customTextCheckBox);
             this.Controls.Add(this.talkVolumeSlider);
             this.Controls.Add(this.talkSpeedSlider);
@@ -319,6 +332,7 @@ namespace Bed_Time_Story
         private System.Windows.Forms.TrackBar talkSpeedSlider;
         private System.Windows.Forms.TrackBar talkVolumeSlider;
         private System.Windows.Forms.CheckBox customTextCheckBox;
+        private System.Windows.Forms.CheckBox darkModeCheckbox;
     }
 }
 

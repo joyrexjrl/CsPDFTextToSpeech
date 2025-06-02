@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 
 using PdfPigDoc = UglyToad.PdfPig.PdfDocument;
 using PdfiumDoc = PdfiumViewer.PdfDocument;
+using System.Drawing;
 
 namespace Bed_Time_Story
 {
@@ -16,6 +17,7 @@ namespace Bed_Time_Story
         PdfiumDoc _loadedDocument;
         int _totalPages = 0;
         int _currentCharIndex = 0;
+        int _lastKnownCharIndex = 0;
         string _fullTextToRead = "";
         string _filePath = "";
         bool _isPaused = false;
@@ -27,6 +29,7 @@ namespace Bed_Time_Story
             playButton.Enabled = false;
             pauseButton.Enabled = false;
             stopButton.Enabled = false;
+            darkModeCheckbox.Checked = true;
 
             PopulateVoiceOptions();
 
@@ -123,17 +126,9 @@ namespace Bed_Time_Story
 
         void playButton_Click(object sender, EventArgs e)
         {
-            string textToRead;
-
             if (customTextCheckBox.Checked)
             {
-                textToRead = displayPdfTextbox.Text;
-
-                if (string.IsNullOrWhiteSpace(textToRead))
-                {
-                    MessageBox.Show("Please enter custom text to read.");
-                    return;
-                }
+                _fullTextToRead = displayPdfTextbox.Text;
             }
             else
             {
@@ -146,17 +141,16 @@ namespace Bed_Time_Story
                 bool hasStart = int.TryParse(startPageTextbox.Text, out int startPage);
                 bool hasEnd = int.TryParse(endPageTextbox.Text, out int endPage);
 
-                if (!hasStart && !hasEnd) textToRead = ExtractWithPdfPig(_filePath, 1, _totalPages);
+                if (!hasStart && !hasEnd) _fullTextToRead = ExtractWithPdfPig(_filePath, 1, _totalPages);
                 else
                 {
                     startPage = hasStart ? Clamp(startPage, 1, _totalPages) : 1;
                     endPage = hasEnd ? Clamp(endPage, startPage, _totalPages) : _totalPages;
-                    textToRead = ExtractWithPdfPig(_filePath, startPage, endPage);
+                    _fullTextToRead = ExtractWithPdfPig(_filePath, startPage, endPage);
                 }
-                displayPdfTextbox.Text = textToRead;
+                displayPdfTextbox.Text = _fullTextToRead;
             }
 
-            _fullTextToRead = textToRead;
             _currentCharIndex = 0;
             _isPaused = false;
 
@@ -166,7 +160,7 @@ namespace Bed_Time_Story
             _synthesizer.Volume = talkVolumeSlider.Value;
             _synthesizer.SpeakProgress -= Synthesizer_SpeakProgress;
             _synthesizer.SpeakProgress += Synthesizer_SpeakProgress;
-            _synthesizer.SpeakAsync(textToRead);
+            _synthesizer.SpeakAsync(_fullTextToRead);
 
             pauseButton.Enabled = true;
             stopButton.Enabled = true;
@@ -187,16 +181,20 @@ namespace Bed_Time_Story
             }
             else
             {
-                if(_currentCharIndex < _fullTextToRead.Length)
+                if(_lastKnownCharIndex < _fullTextToRead.Length)
                 {
-                    _synthesizer.SpeakAsync(_fullTextToRead.Substring(_currentCharIndex));
+                    _synthesizer.SpeakAsync(_fullTextToRead.Substring(_lastKnownCharIndex));
                     _isPaused = false;
                     pauseButton.Text = "Pause";
                 }
             }
         }
 
-        void Synthesizer_SpeakProgress(object sender, SpeakProgressEventArgs e) => _currentCharIndex = e.CharacterPosition;
+        void Synthesizer_SpeakProgress(object sender, SpeakProgressEventArgs e)
+        {
+            _currentCharIndex = e.CharacterPosition;
+            _lastKnownCharIndex = _currentCharIndex;
+        }
 
         void Synthesizer_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
         {
@@ -213,8 +211,8 @@ namespace Bed_Time_Story
             }
             else
             {
-                stopButton.Enabled = false;
-                pauseButton.Enabled = false;
+                stopButton.Enabled = true;
+                pauseButton.Enabled = true;
                 playButton.Enabled = true;
                 talkSpeedSlider.Enabled = true;
                 talkVolumeSlider.Enabled = true;
@@ -270,6 +268,34 @@ namespace Bed_Time_Story
         {
             if (customTextCheckBox.Checked) playButton.Enabled = !string.IsNullOrWhiteSpace(displayPdfTextbox.Text);
             else playButton.Enabled = _loadedDocument != null;
+        }
+
+        void darkModeCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (darkModeCheckbox.Checked) EnableDarkMode(this);
+            else EnableLightMode(this);
+        }
+
+        void EnableDarkMode(Control control)
+        {
+            control.BackColor = Color.FromArgb(30, 30, 30);
+            control.ForeColor = Color.White;
+
+            foreach (Control child in control.Controls)
+            {
+                EnableDarkMode(child);
+            }
+        }
+
+        void EnableLightMode(Control control)
+        {
+            control.BackColor = SystemColors.Control;
+            control.ForeColor = SystemColors.ControlText;
+
+            foreach (Control child in control.Controls)
+            {
+                EnableLightMode(child);
+            }
         }
     }
 }
