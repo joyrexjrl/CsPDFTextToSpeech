@@ -51,3 +51,4 @@ D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Tok
 D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Tokenization.xml
 D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Tokens.pdb
 D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\bin\Debug\UglyToad.PdfPig.Tokens.xml
+D:\CsPDFTextToSpeech\Bed Time Story\Bed Time Story\obj\Debug\Bed_Time_Story.AddNotes.resources

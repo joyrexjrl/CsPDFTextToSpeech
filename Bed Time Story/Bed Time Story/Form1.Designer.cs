@@ -52,6 +52,10 @@ namespace Bed_Time_Story
             this.talkVolumeSlider = new System.Windows.Forms.TrackBar();
             this.customTextCheckBox = new System.Windows.Forms.CheckBox();
             this.darkModeCheckbox = new System.Windows.Forms.CheckBox();
+            this.clearTextButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.openNotesButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pdfWebBrowser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.talkSpeedSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.talkVolumeSlider)).BeginInit();
@@ -270,11 +274,53 @@ namespace Bed_Time_Story
             this.darkModeCheckbox.UseVisualStyleBackColor = true;
             this.darkModeCheckbox.CheckedChanged += new System.EventHandler(this.darkModeCheckbox_CheckedChanged);
             // 
+            // clearTextButton
+            // 
+            this.clearTextButton.Location = new System.Drawing.Point(443, 798);
+            this.clearTextButton.Name = "clearTextButton";
+            this.clearTextButton.Size = new System.Drawing.Size(75, 23);
+            this.clearTextButton.TabIndex = 23;
+            this.clearTextButton.Text = "Clear Text";
+            this.clearTextButton.UseVisualStyleBackColor = true;
+            this.clearTextButton.Click += new System.EventHandler(this.clearTextButton_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(430, 785);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 13);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Clear custom text";
+            // 
+            // openNotesButton
+            // 
+            this.openNotesButton.Location = new System.Drawing.Point(535, 798);
+            this.openNotesButton.Name = "openNotesButton";
+            this.openNotesButton.Size = new System.Drawing.Size(75, 23);
+            this.openNotesButton.TabIndex = 25;
+            this.openNotesButton.Text = "Notes";
+            this.openNotesButton.UseVisualStyleBackColor = true;
+            this.openNotesButton.Click += new System.EventHandler(this.openNotesButton_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(532, 785);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Custom notes";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 833);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.openNotesButton);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.clearTextButton);
             this.Controls.Add(this.darkModeCheckbox);
             this.Controls.Add(this.customTextCheckBox);
             this.Controls.Add(this.talkVolumeSlider);
@@ -333,6 +379,10 @@ namespace Bed_Time_Story
         private System.Windows.Forms.TrackBar talkVolumeSlider;
         private System.Windows.Forms.CheckBox customTextCheckBox;
         private System.Windows.Forms.CheckBox darkModeCheckbox;
+        private System.Windows.Forms.Button clearTextButton;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button openNotesButton;
+        private System.Windows.Forms.Label label8;
     }
 }
 

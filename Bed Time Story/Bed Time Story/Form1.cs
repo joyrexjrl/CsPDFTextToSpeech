@@ -29,6 +29,7 @@ namespace Bed_Time_Story
             playButton.Enabled = false;
             pauseButton.Enabled = false;
             stopButton.Enabled = false;
+            clearTextButton.Enabled = false;
             darkModeCheckbox.Checked = true;
 
             PopulateVoiceOptions();
@@ -198,25 +199,23 @@ namespace Bed_Time_Story
 
         void Synthesizer_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
         {
-            if (InvokeRequired)
+            void ResetControls()
             {
-                Invoke(new Action(() =>
-                {
-                    stopButton.Enabled = false;
-                    pauseButton.Enabled = false;
-                    playButton.Enabled = true;
-                    talkSpeedSlider.Enabled = true;
-                    talkVolumeSlider.Enabled = true;
-                }));
-            }
-            else
-            {
-                stopButton.Enabled = true;
-                pauseButton.Enabled = true;
-                playButton.Enabled = true;
+                stopButton.Enabled = false;
+                pauseButton.Enabled = false;
+                pauseButton.Text = "Pause";
+                playButton.Enabled = customTextCheckBox.Checked
+                    ? !string.IsNullOrWhiteSpace(displayPdfTextbox.Text)
+                    : _loadedDocument != null;
+
                 talkSpeedSlider.Enabled = true;
                 talkVolumeSlider.Enabled = true;
+                _isPaused = false;
+                _currentCharIndex = 0;
             }
+
+            if (InvokeRequired) Invoke(new Action(ResetControls));
+            else ResetControls();
         }
 
         void stopButton_Click(object sender, EventArgs e)
@@ -257,8 +256,16 @@ namespace Bed_Time_Story
         void customTextCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             displayPdfTextbox.ReadOnly = !customTextCheckBox.Checked;
-            if (customTextCheckBox.Checked) displayPdfTextbox.Text = "";
-            else displayPdfTextbox.Text = "";
+            if (customTextCheckBox.Checked)
+            {
+                displayPdfTextbox.Text = "";
+                clearTextButton.Enabled = true;
+            }
+            else
+            {
+                displayPdfTextbox.Text = "";
+                clearTextButton.Enabled = false;
+            }
             UpdatePlayButtonEnabledState();
         }
 
@@ -272,30 +279,16 @@ namespace Bed_Time_Story
 
         void darkModeCheckbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (darkModeCheckbox.Checked) EnableDarkMode(this);
-            else EnableLightMode(this);
+            ThemeManager.SetDarkMode(darkModeCheckbox.Checked);
+            ThemeManager.ApplyTheme(this);
         }
 
-        void EnableDarkMode(Control control)
+        void clearTextButton_Click(object sender, EventArgs e) => displayPdfTextbox.Text = "";
+
+        void openNotesButton_Click(object sender, EventArgs e)
         {
-            control.BackColor = Color.FromArgb(30, 30, 30);
-            control.ForeColor = Color.White;
-
-            foreach (Control child in control.Controls)
-            {
-                EnableDarkMode(child);
-            }
-        }
-
-        void EnableLightMode(Control control)
-        {
-            control.BackColor = SystemColors.Control;
-            control.ForeColor = SystemColors.ControlText;
-
-            foreach (Control child in control.Controls)
-            {
-                EnableLightMode(child);
-            }
+            AddNotes notes = new AddNotes();
+            notes.Show();
         }
     }
 }
