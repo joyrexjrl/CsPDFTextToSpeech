@@ -7,7 +7,6 @@ using System.Text.RegularExpressions;
 
 using PdfPigDoc = UglyToad.PdfPig.PdfDocument;
 using PdfiumDoc = PdfiumViewer.PdfDocument;
-using System.Drawing;
 
 namespace Bed_Time_Story
 {
@@ -74,7 +73,6 @@ namespace Bed_Time_Story
         string ExtractWithPdfPig(string filePath, int startPage, int endPage)
         {
             var textBuilder = new StringBuilder();
-
             using (PdfPigDoc document = PdfPigDoc.Open(filePath))
             {
                 for (int i = startPage; i <= endPage; i++)
@@ -121,7 +119,6 @@ namespace Bed_Time_Story
                     voiceSelectCombobox.Items.Add(info.Name);
                 }
             }
-
             if (voiceSelectCombobox.Items.Count > 0) voiceSelectCombobox.SelectedIndex = 0;
         }
 
@@ -176,18 +173,15 @@ namespace Bed_Time_Story
         {
             if (!_isPaused)
             {
-                _synthesizer.SpeakAsyncCancelAll();
+                _synthesizer.Pause();
                 _isPaused = true;
                 pauseButton.Text = "Unpause";
             }
             else
             {
-                if(_lastKnownCharIndex < _fullTextToRead.Length)
-                {
-                    _synthesizer.SpeakAsync(_fullTextToRead.Substring(_lastKnownCharIndex));
-                    _isPaused = false;
-                    pauseButton.Text = "Pause";
-                }
+                _synthesizer.Resume();
+                _isPaused = false;
+                pauseButton.Text = "Pause";
             }
         }
 
@@ -213,7 +207,6 @@ namespace Bed_Time_Story
                 _isPaused = false;
                 _currentCharIndex = 0;
             }
-
             if (InvokeRequired) Invoke(new Action(ResetControls));
             else ResetControls();
         }
